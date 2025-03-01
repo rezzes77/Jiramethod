@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить разработчика{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Добавить разработчика</h2>
+
+    <!-- Форма добавления разработчика -->
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Имя разработчика</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="group" class="form-label">Группа</label>
+            <input type="text" class="form-control" id="group" name="group" required>
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Номер телефона</label>
+            <input type="text" class="form-control" id="number" name="number" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a href="{% url 'developer_list' %}" class="btn btn-secondary">Назад</a>
+    </form>
+</div>
+{% endblock %}
